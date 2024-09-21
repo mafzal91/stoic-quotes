@@ -90,10 +90,10 @@ async function imagePathHandler(request: NextRequest) {
     response.cookies.set(cookie.name, cookie.value);
   });
   console.log(url.toString());
-  response.headers.set(
-    "Content-Disposition",
-    'attachment; filename="stoic-snapshots.png"'
-  );
+  // response.headers.set(
+  //   "Content-Disposition",
+  //   'attachment; filename="stoic-snapshots.png"'
+  // );
 
   await new Database().saveDownloadSettings({
     quote_id,

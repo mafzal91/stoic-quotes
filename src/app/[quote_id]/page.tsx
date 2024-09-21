@@ -40,6 +40,9 @@ async function getQuote(
 }
 
 export default async function QuoteByIdPage({ params: { quote_id } }: Props) {
+  if (quote_id !== "1296") {
+    console.log({ quote_id });
+  }
   const quoteData = await getQuote(quote_id);
 
   if (!quoteData) notFound();

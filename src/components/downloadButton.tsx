@@ -77,13 +77,16 @@ export function DownloadButton({ children }: { children: React.ReactNode }) {
   const base_url = window.location.origin;
   const url = `${base_url}/image/${quote_id}`;
 
+  const onClick = () => {
+    window.open(url, "_blank");
+  };
+
   return (
-    <a
+    <button
       className="inline-flex w-full justify-center rounded-md bg-background px-3 py-2 text-sm font-semibold text-primary hover:text-background hover:bg-primary border-[1px] border-primary sm:ml-3 sm:w-auto"
-      href={url}
-      target="_blank"
+      onClick={onClick}
     >
       {children}
-    </a>
+    </button>
   );
 }
